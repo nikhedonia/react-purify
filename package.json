@@ -1,0 +1,31 @@
+{
+  "name": "react-purify",
+  "version": "0.0.0",
+  "description": "helper functions and decorators for purification of react components with global dependencies and context. Simplifies the implementation of a flux-architecture",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nikhedonia/react-purify.git"
+  },
+  "keywords": [
+    "react",
+    "context",
+    "decorators",
+    "es6",
+    "es7",
+    "pure",
+    "flux"
+  ],
+  "author": "Gaetano Checinski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nikhedonia/react-purify/issues"
+  },
+  "dependencies": {
+    "babel": "^5.8.9",
+    "react": "^0.13.3"
+  }
+}
