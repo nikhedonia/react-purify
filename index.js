@@ -22,7 +22,7 @@ export const use = function(context,get=((x)=>x)){
     };
   };
 
-  return (this)?wrapper(this):wrapper;
+  return /*(this)?wrapper(this):*/wrapper;
 
 };
 
@@ -35,7 +35,7 @@ export const compute = function(compute){
         this.computed=compute(props);
       }
       componentWillUpdate(props){
-        if( this::React.addons.PureRenderMixin.shouldComponentUpdate(props) ){
+        if( React.addons.PureRenderMixin.shouldComponentUpdate.call(this,props) ){
           console.log('recompute',props);
           this.computed=compute(props);
         }
@@ -46,7 +46,7 @@ export const compute = function(compute){
     };
   };
 
-  return (this)?wrapper(this):wrapper;
+  return /*(this)?wrapper(this):*/wrapper;
 
 };
 
@@ -71,7 +71,7 @@ export const inject = function(context){
     }
   };
 
-  return (this)?wrapper(this):wrapper;
+  return /*(this)?wrapper(this):*/wrapper;
 
 };
 
@@ -84,7 +84,7 @@ export const mix = function(mixins){
     return Component;
   }
 
-  return (this)?wrapper(this):wrapper;
+  return /*(this)?wrapper(this):*/wrapper;
 
 };
 
@@ -93,23 +93,23 @@ export const pure = function(){
   return mix.call(this,[React.addons.PureRenderMixin]);
 };
 
-export const pureUI =( 
+export const pureUI =(
   (renderFunc)=> (
     @pure()
-    class { 
-      render(){ 
-        return renderFunc.call(this,this.props); 
-      } 
+    class {
+      render(){
+        return renderFunc.call(this,this.props);
+      }
     }
   )
 );
 
-export const UI = ( 
+export const UI = (
   (renderFunc)=>(
-    class { 
-      render(){ 
-        return renderFunc.call(this,this.props); 
-      } 
+    class {
+      render(){
+        return renderFunc.call(this,this.props);
+      }
     }
   )
 );
