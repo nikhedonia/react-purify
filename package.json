@@ -1,6 +1,6 @@
 {
   "name": "react-purify",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "helper functions and decorators for purification of react components with global dependencies and context. Simplifies the implementation of a flux-architecture",
   "main": "index.js",
   "scripts": {
